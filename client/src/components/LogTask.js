@@ -16,7 +16,7 @@ const SMTPSettings = ({ onSave }) => {
 
   const fetchSMTPSettings = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/smtp-settings');
+      const res = await axios.get('http://localhost:5001/smtp-settings');
       if (res.data) {
         setHost(res.data.host);
         setPort(res.data.port);
@@ -31,7 +31,7 @@ const SMTPSettings = ({ onSave }) => {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/smtp-settings', {
+      await axios.post('http://localhost:5001/smtp-settings', {
         host,
         port,
         user,
@@ -114,7 +114,7 @@ const LogTask = () => {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/tasks');
+      const res = await axios.get('http://localhost:5001/tasks');
       setTasks(res.data);
     } catch (error) {
       console.error('Error fetching tasks', error);
@@ -125,7 +125,7 @@ const LogTask = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/tasks', {
+      const res = await axios.post('http://localhost:5001/tasks', {
         issue,
         category,
         assignee,
@@ -145,7 +145,7 @@ const LogTask = () => {
   const handleDelete = async (id) => {
 
     try {
-      await axios.delete(`http://localhost:5000/tasks/${id}`);
+      await axios.delete(`http://localhost:5001/tasks/${id}`);
       fetchTasks(); // Refresh tasks list after deletion
     } catch (error) {
       console.error('Error deleting task', error);

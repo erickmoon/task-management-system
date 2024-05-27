@@ -10,34 +10,17 @@ const PORT = 5001;
 app.use(bodyParser.json());
 app.use(cors());
 
-
 // Database connection
 const sequelize = new Sequelize('task_management', 'admin', 'pass', {
   host: 'localhost',
   dialect: 'mssql',
   dialectOptions: {
     options: {
-      encrypt: true, // Use encryption
-      trustServerCertificate: true, // Required for self-signed certificates
-      // instanceName: 'SQLEXPRESS' // Uncomment this line if using a named instance
+      encrypt: true,
+      enableArithAbort: true,
     },
   },
-  logging: false, // Set to true to see SQL queries in console
-  // pool: { // Uncomment and configure if needed
-  //   max: 5,
-  //   min: 0,
-  //   idle: 10000
-  // }
 });
-
-// Test the database connection
-sequelize.authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
 
 // Define Task model
 const Task = sequelize.define('Task', {
@@ -185,7 +168,6 @@ app.delete('/tasks/:id', async (req, res) => {
     res.status(500).send(error.toString());
   }
 });
-
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
