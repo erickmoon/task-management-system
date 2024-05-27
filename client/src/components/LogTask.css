@@ -1,0 +1,272 @@
+.log-task-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+}
+
+.log-task-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: black; /* Ensure the header color is black */
+}
+
+.log-task-form .form-group {
+  margin-bottom: 15px;
+}
+
+.log-task-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: normal;
+  margin-left: 13px;
+  color: black; /* Ensure label color is black */
+}
+
+.log-task-form .form-group input,
+.log-task-form .form-group select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 0 auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.log-task-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.log-task-form button:hover {
+  background-color: #218838;
+}
+
+.response-message,
+.error-message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #155724;
+}
+
+.response-message {
+  border: 1px solid #28a745;
+  background-color: #d4edda;
+}
+
+.error-message {
+  border: 1px solid #dc3545;
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.tasks-table-container {
+  overflow-x: auto;
+}
+
+.tasks-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #000;
+}
+
+.tasks-table th,
+.tasks-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.tasks-table th {
+  background-color: #f8f9fa;
+}
+
+.tasks-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.delete-button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .log-task-container {
+    padding: 15px;
+  }
+
+  .log-task-form .form-group input,
+  .log-task-form .form-group select {
+    width: calc(100% - 10px);
+  }
+
+  .log-task-form button {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .tasks-table th,
+  .tasks-table td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .log-task-container h2 {
+    font-size: 20px;
+  }
+
+  .log-task-form .form-group label {
+    font-size: 14px;
+  }
+
+  .log-task-form button {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .tasks-table th,
+  .tasks-table td {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .tasks-table-container {
+    overflow-x: scroll;
+  }
+
+  .tasks-table {
+    width: 100%;
+  }
+}
+
+/* Filters */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 10px;
+}
+
+.filter-group label {
+
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: black; /* Ensure filter labels are black */
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 150px;
+}
+
+/* SMTP Settings */
+.smtp-settings-container {
+  width: 30%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: black; /* Ensure container color is black */
+}
+
+.smtp-settings-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: black; /* Ensure header color is black */
+}
+
+.smtp-settings-form .form-group {
+  margin-bottom: 15px;
+}
+
+.smtp-settings-form .form-group label {
+  margin-left: 13px;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: normal;
+  color: black; /* Ensure label color is black */
+}
+
+.smtp-settings-form .form-group input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 0 auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.smtp-settings-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.smtp-settings-form button:hover {
+  background-color: #218838;
+}
+
+/* Adjust the layout for the main container */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form-table-container {
+  width: 65%;
+}
+
+@media (max-width: 1200px) {
+  .form-table-container {
+    width: 100%;
+  }
+
+  .smtp-settings-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
